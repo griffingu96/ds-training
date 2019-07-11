@@ -1,0 +1,22 @@
+Drop Table Instructor;
+Create table 
+	Instructor(ins_id INTEGER PRIMARY KEY NOT NULL,lastname VARCHAR(15) Not Null ,firstname VARCHAR(15) NOT NULL ,city VARCHAR(40),country CHAR(2));
+	
+INSERT INTO Instructor VALUES(1,'Ahuja','Rav','Toronto','CA');
+
+Insert into instructor VALUES (2,'Chong','Raul','Toronto','CA'),(3,'Vasudevan','Hima','Chicago','US');
+
+SELECT * FROM Instructor;
+
+Select firstname, lastname, country 
+from instructor
+where city='Toronto';
+
+Update instructor 
+set city ='Markham'
+where ins_id =1;
+
+Delete FROM instructor 
+where ins_id = '2';
+
+select * from instructor;
