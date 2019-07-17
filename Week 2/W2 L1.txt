@@ -1,0 +1,67 @@
+Q1:
+
+3 Errors indicating "F0-2","F0-3","F0-4" and Column "2" were truncated beacasue that data is longer than the target database column.
+
+Q2:
+
+1 Errors: The utility has deleted "1" rows from the table
+
+   --1                         
+SELECT * 
+FROM Employees
+WHERE ADDRESS LIKE '%Elgin,IL';
+
+--2
+SELECT *
+FROM Employees 
+WHERE B_DATE LIKE '197%';     
+
+--3
+SELECT * 
+FROM Employees
+WHERE DEP_ID ='5' AND SALARY BETWEEN 60000 AND 70000;
+
+--4A
+SELECT *
+FROM EMPLOYEES
+ORDER BY Dep_ID;
+
+--4B
+SELECT *
+FROM EMPLOYEES
+ORDER BY Dep_ID DESC;
+
+--5A
+SELECT Dep_ID, COUNT(*) counts
+FROM EMPLOYEES
+GROUP BY Dep_ID;
+
+--5B
+SELECT Dep_ID, COUNT(*) Num_Employees, avg(salary) AVG_SALARY
+FROM EMPLOYEES
+GROUP BY Dep_ID;
+
+--5C
+SELECT Dep_ID, COUNT(*) Num_Employees, avg(salary) AVG_SALARY
+FROM EMPLOYEES
+GROUP BY Dep_ID;
+
+--5D
+SELECT Dep_ID, COUNT(*) Num_Employees, avg(salary) AVG_SALARY
+FROM EMPLOYEES
+GROUP BY Dep_ID
+ORDER BY Avg_Salary;
+
+--5E
+SELECT Dep_ID, COUNT(*) Num_Employees, avg(salary) AVG_SALARY
+FROM EMPLOYEES
+GROUP BY Dep_ID
+HAVING  COUNT(*) <4
+ORDER BY Avg_Salary;
+
+--6
+SELECT * 
+FROM Employees e
+join departments d
+on e.Dep_ID=d.DEPT_ID_DEP
+ORDER BY d.Dep_Name, e.L_Name DESC;
